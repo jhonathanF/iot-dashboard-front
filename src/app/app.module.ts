@@ -1,16 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { appRoutes } from './app.routes';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule, MatSidenavModule, MatCardModule } from '@angular/material';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './Components/home/home.component';
+import { from } from 'rxjs';
+import { HttpClientModule} from '@angular/common/http';
+import { HeaderComponent } from './Components/header/header.component';
+import { SideNavComponent } from './Components/side-nav/side-nav.component';
+import { CardsComponent } from './Components/cards/cards.component';
+import { ApiService } from './Services/api.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    HeaderComponent,
+    SideNavComponent,
+    CardsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatCardModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    ApiService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
