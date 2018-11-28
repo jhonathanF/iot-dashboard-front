@@ -11,8 +11,9 @@ import { R3ResolvedDependencyType } from '@angular/compiler';
 })
 export class HomeComponent implements OnInit {
 
-  inter = interval(200);
-  content: number;
+  inter = interval(500);
+  distancia: number;
+  luminosidade: number;
   constructor(private api: ApiService) { }
 
   ngOnInit() {
@@ -20,8 +21,14 @@ export class HomeComponent implements OnInit {
       startWith(0),
       switchMap(() => this.api.getDistance())
     ).subscribe(response => {
-      console.log(response);
-      this.content = response['distance'];
+      this.distancia = response['distance'];
+    });
+
+    this.inter.pipe(
+      startWith(0),
+      switchMap(() => this.api.getLightness())
+    ).subscribe(response => {
+      this.luminosidade = response['lightness'];
     });
   }
 
