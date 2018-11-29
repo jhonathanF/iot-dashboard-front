@@ -9,7 +9,7 @@
       {{content}} {{suffix}}
     </div>
     <div *ngIf="type === 1"  class="container d-flex justify-content-center">
-      <mat-slide-toggle (change)="toggleLed()"></mat-slide-toggle>
+      <mat-slide-toggle (change)="toggleLed()"   [checked]="checked"></mat-slide-toggle>
     </div>
   </mat-card-content>
 </mat-card>
