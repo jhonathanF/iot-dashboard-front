@@ -5,8 +5,11 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <div id="div-content" class="container font-weight-bold d-flex justify-content-center">
-      {{content}} cm
-        </div>
+    <div id="div-content" *ngIf="type === 0" class="container font-weight-bold d-flex justify-content-center">
+      {{content}} {{suffix}}
+    </div>
+    <div *ngIf="type === 1"  class="container d-flex justify-content-center">
+      <mat-slide-toggle (change)="toggleLed()"></mat-slide-toggle>
+    </div>
   </mat-card-content>
 </mat-card>

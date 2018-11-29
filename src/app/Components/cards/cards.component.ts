@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ApiService } from 'src/app/Services/api.service';
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
@@ -8,10 +9,18 @@ export class CardsComponent implements OnInit {
 
   @Input() title: string;
   @Input() content: string;
+  @Input() suffix = '';
+  @Input() type = 0;
 
-  constructor() { }
+  constructor(
+    private apiService: ApiService
+  ) { }
 
   ngOnInit() {
+  }
+
+  toggleLed() {
+    this.apiService.toggleLed().subscribe();
   }
 
 }

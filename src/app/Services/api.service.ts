@@ -14,4 +14,7 @@ export class ApiService {
     return this.http.get('http://localhost:3000/lightness');
   }
 
+  toggleLed() {
+    return this.http.put('http://localhost:3000/led', {});
+  }
 }

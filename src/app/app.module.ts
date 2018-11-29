@@ -12,6 +12,7 @@ import { HeaderComponent } from './Components/header/header.component';
 import { SideNavComponent } from './Components/side-nav/side-nav.component';
 import { CardsComponent } from './Components/cards/cards.component';
 import { ApiService } from './Services/api.service';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ApiService } from './Services/api.service';
     MatToolbarModule,
     MatSidenavModule,
     MatCardModule,
+    MatSlideToggleModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
