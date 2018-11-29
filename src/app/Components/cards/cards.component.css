@@ -5,3 +5,7 @@
 #div-content{
     font-size: 1.9rem;
 }
+
+mat-card-content{
+    min-height: 50px;
+}
